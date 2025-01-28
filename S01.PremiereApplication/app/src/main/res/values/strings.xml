@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">First Applicaiton</string>
+    <string name="msg_try">Try</string>
+    <string name="new_game">New Game</string>
+    <string name="good_luck">Good Luck</string>
+    <string name="too_high">Too High</string>
+    <string name="too_low">Too Low</string>
+    <string name="you_win">You  Win !</string>
 </resources>
