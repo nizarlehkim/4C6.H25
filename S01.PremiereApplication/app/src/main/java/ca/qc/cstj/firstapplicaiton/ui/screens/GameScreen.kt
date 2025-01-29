@@ -18,11 +18,27 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import ca.qc.cstj.firstapplicaiton.R
+import nl.dionsegijn.konfetti.compose.KonfettiView
+import nl.dionsegijn.konfetti.core.Party
+import nl.dionsegijn.konfetti.core.emitter.Emitter
+import java.util.concurrent.TimeUnit
+
 
 @Composable
 fun GameScreen(viewModel: GameScreenViewModel = viewModel() ){
+
     val uiState = viewModel.uiState.collectAsStateWithLifecycle().value
 
+    if(uiState.status == GameStatus.WIN)
+    KonfettiView(
+        modifier = Modifier.fillMaxSize(),
+        parties = listOf(
+            Party(
+                emitter = Emitter(duration = 5, TimeUnit.SECONDS).perSecond(30)
+            )
+        )
+
+    )
 
 
 
